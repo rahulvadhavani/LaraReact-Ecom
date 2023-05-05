@@ -65,7 +65,7 @@ class CategoryController extends Controller
         Category::create($data);
         Category::categoriesCount(true);
         return redirect()->route('admin.categories.index')
-            ->with(['flash_message' => ['status' => true, 'message' => "$this->module created successfully."]]);
+            ->with(['flash_message' => ['status' => true, 'message' => "$this->module created successfully"]]);
     }
 
     /**

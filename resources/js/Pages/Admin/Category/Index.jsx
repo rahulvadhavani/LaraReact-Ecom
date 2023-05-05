@@ -86,10 +86,9 @@ const Index = ({ auth }) => {
                                         name="search"
                                         value={searchTerm}
                                     />
-                                    <LinkButton href={route('admin.categories.index')} className="ml-6" preserveScroll={true}>
-                                        <i className="fa-solid fa-undo-alt"></i>
-                                    </LinkButton>
-                                    {/* <Button preserveScroll={true} href={route('admin.categories.index')} className='ml-3'><FaUndoAlt /></Button> */}
+                                    <Link  href={route('admin.categories.index')} preserveScroll={true}>
+                                        <i class="hover:text-red-600 ml-6 mt-2 transition-all duration-300 text-2xl fa-solid fa-filter-circle-xmark"></i>
+                                    </Link>
                                 </div>
                                 <LinkButton href={route('admin.categories.create')} className="ml-6" preserveScroll={true}>
                                     Create
