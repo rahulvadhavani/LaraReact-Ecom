@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import AdminAuthenticated from '@/Layouts/AdminAuthenticated';
 import Input from '@/Components/Input';
@@ -29,13 +29,10 @@ const Index = ({ auth }) => {
         const query = e.target.value.length > 0 ? `?search=${e.target.value}` : '';
         const newUrl = `${window.location.pathname}${query}`;
         window.history.pushState({}, '', newUrl);
-        const delayDebounceFn = setTimeout(() => {
-            axios.get(route('admin.products.index'), { params: { search: e.target.value, curren_page: current_page } })
-                .then(res => {
-                    setProductsData(res.data.products)
-                })
-        }, 500);
-        return () => clearTimeout(delayDebounceFn);
+        axios.get(route('admin.products.index'), { params: { search: e.target.value, curren_page: current_page } })
+            .then(res => {
+                setProductsData(res.data.products)
+            })
     }
 
 
@@ -113,7 +110,7 @@ const Index = ({ auth }) => {
             <div className="space-y-6">
                 <div className="p-2 sm:p-3 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                     <div>
-                        <section className="container px-4 mx-auto">
+                    <section className="container px-5 mx-auto">
                             <div className='flex justify-between'>
                                 <div className='w-1/2 flex justify-start'>
                                     <Input
@@ -126,7 +123,7 @@ const Index = ({ auth }) => {
                                         value={searchTerm}
                                     />
                                     <Link href={route('admin.products.index')} preserveScroll={true}>
-                                        <i class="hover:text-red-600 ml-6 mt-2 transition-all duration-300 text-2xl fa-solid fa-filter-circle-xmark"></i>
+                                        <i classnam="hover:text-red-600 ml-6 mt-2 transition-all duration-300 text-2xl fa-solid fa-filter-circle-xmark"></i>
                                     </Link>
                                 </div>
                                 <LinkButton href={route('admin.products.create')} className="ml-6" preserveScroll={true}>
@@ -134,10 +131,10 @@ const Index = ({ auth }) => {
                                 </LinkButton>
                             </div>
                             <div className="flex flex-col mt-3">
-                                <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                    <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                                <div className="overflow-x-auto ">
+                                    <div className="inline-block min-w-full py-2 align-middle">
                                         <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                                            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                            <table className="h-auto transition-height duration-300 ease-in-out min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                                 <thead className="bg-gray-50 dark:bg-gray-800">
                                                     <tr>
                                                         <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -224,7 +221,7 @@ const Index = ({ auth }) => {
                                                         </tr>
                                                     ))}
                                                     {productData.data.length == 0 && (<tr>
-                                                        <td colSpan="7" className='p-5 text-center text-gray-300'>
+                                                        <td colSpan="8" className='p-5 text-center text-gray-300'>
                                                             No Data Found
                                                         </td>
                                                     </tr>)}

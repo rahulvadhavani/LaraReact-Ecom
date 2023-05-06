@@ -2,8 +2,7 @@ import Ads from '@/Components/Frontend/Ads'
 import Banner from '@/Components/Frontend/Banner'
 import Category from '@/Components/Frontend/Category'
 import Features from '@/Components/Frontend/Features'
-import NewArrival from '@/Components/Frontend/NewArrival'
-import Products from '@/Components/Frontend/Products'
+import ProductsLineUp from '@/Components/Frontend/ProductsLineUp'
 import Authenticated from '@/Layouts/Authenticated'
 import { Link, Head, usePage } from '@inertiajs/react'
 
@@ -21,9 +20,9 @@ export default (props) => {
                 <Banner></Banner>
                 <Features></Features>
                 <Category></Category>
-                <NewArrival></NewArrival>
+                <ProductsLineUp title='New arrival' products={page_data.products}></ProductsLineUp>
                 <Ads></Ads>
-                <Products></Products>
+                <ProductsLineUp title='Recomended for you'  products={page_data.products}></ProductsLineUp>
             </Authenticated>
         </>
     )

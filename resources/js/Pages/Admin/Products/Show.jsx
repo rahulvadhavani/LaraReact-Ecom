@@ -44,8 +44,8 @@ export default function Show(props) {
                         <ActionButton openModal={openModal} id={product.id} href={route('admin.products.edit', product.id)}></ActionButton>
                         <BackButton href={route("admin.products.index")}></BackButton>
                     </div>
-                    <div className='grid grid-cols-3 gap-2 mt-5'>
-                        <div className="border dark:border-gray-600 max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-2 mt-5'>
+                        <div className="bg-white p-3 border  dark:border-gray-600 overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
                             <img
                                 className="mx-auto object-center h-72 w-72"
                                 src={product.thumbnail}
@@ -81,7 +81,7 @@ export default function Show(props) {
                                 <ProductAttribute attributes={product.attributes}></ProductAttribute>
                             </div>
                         </div>
-                        <div className="bg-white p-3 col-span-2 border  dark:border-gray-600 overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
+                        <div className="bg-white p-3 lg:col-span-2 border  dark:border-gray-600 overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
                             <Tabs.Group
                                 aria-label="Tabs with underline"
                                 style="underline"

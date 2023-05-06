@@ -11,12 +11,12 @@ export default () => {
 
     return (
         <div
-            className={`fixed inset-x-0 bottom-0 flex items-center justify-between px-4 py-4 transition-transform duration-500 bg-white sm:px-6 md:hidden dark:bg-dark-eval-1 ${isScrollDown && 'translate-y-full'
+            className={`z-10 fixed inset-x-0 bottom-0 flex items-center justify-between px-4 py-4 transition-transform duration-500 bg-white sm:px-6 md:hidden dark:bg-dark-eval-1 ${isScrollDown && 'translate-y-full'
                 } ${isScrollUp && 'translate-y-0'}`}
         >
-            <Button iconOnly variant="secondary" type="button" srText="Search">
+            {/* <Button iconOnly variant="secondary" type="button" srText="Search">
                 <SearchIcon aria-hidden="true" className="w-6 h-6" />
-            </Button>
+            </Button> */}
 
             <Link href={route('admin.dashboard')}>
                 <ApplicationLogo className="w-10 h-10" />

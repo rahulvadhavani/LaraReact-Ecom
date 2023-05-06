@@ -39,8 +39,8 @@ export default function Show(props) {
                         <ActionButton openModal={openModal} id={user.id} href={route('admin.users.edit', user.id)}></ActionButton>
                         <BackButton href={route("admin.users.index")}></BackButton>
                     </div>
-                    <div className='grid grid-cols-3 gap-2 mt-5'>
-                        <div className="border max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                    <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-2 mt-5'>
+                        <div className="bg-white p-3 border dark:border-gray-600 overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
                             <img
                                 className="object-center mx-auto     h-64 h-64"
                                 src={user.avatar}
@@ -75,7 +75,7 @@ export default function Show(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white col-span-2 flex items-center justify-center border overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
+                        <div className="bg-white p-3 lg:col-span-2 border dark:border-gray-600 overflow-hidden rounded-lg shadow-lg dark:bg-gray-800">
                             <h1 className='text-3xl text-gray-400'>No Data Available</h1>
                         </div>
                     </div>

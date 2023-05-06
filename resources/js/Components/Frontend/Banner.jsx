@@ -13,7 +13,7 @@ export default function Banner() {
                         return (
                             <div key={banner.id} className="text-white [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] dark:bg-gray-700 dark:text-white">
                                 <div
-                                    className="bg-cover bg-no-repeat bg-center py-36"
+                                    className="bg-cover bg-no-repeat bg-center py-10"
                                     style={{ backgroundImage: `url(${banner.banner})`, }}
                                 >
                                     <div className='p-16'>
