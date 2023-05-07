@@ -15,213 +15,258 @@ export default (props) => {
             >
                 <Head title="Home" />
                 <>
-                    <section className="text-gray-700 body-font border-t border-gray-200">
-                        <div className="container px-5 py-24 mx-auto">
-                            <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                                <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-                                    Pitchfork Kickstarter Taxidermy
-                                </h1>
-                                <p className="lg:w-1/2 w-full leading-relaxed text-base">
-                                    Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-                                    gentrify, subway tile poke farm-to-table.
-                                </p>
-                            </div>
-                            <div className="flex flex-wrap -m-4">
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            Shooting Stars
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
+                    <div className="relative">
+                        <img
+                            className="w-full object-cover brightness-50 filter lg:h-[500px]"
+                            src="https://tailwind-ecommerce-demo.vercel.app/assets/images/contact-bg.png"
+                            alt="Iphone with Macbook image"
+                        />
+                        <div className="absolute top-1/2 left-1/2 mx-auto flex w-11/12 max-w-[1200px] -translate-x-1/2 -translate-y-1/2 flex-col text-center text-white lg:ml-5">
+                            <h1 className="text-4xl font-bold sm:text-5xl">Contact us</h1>
+                            <p className="mx-auto pt-3 text-xs lg:w-3/5 lg:pt-5 lg:text-base">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+                                aperiam natus, nulla, obcaecati nesciunt, itaque adipisci earum ducimus
+                                pariatur eaque labore.
+                            </p>
+                        </div>
+                    </div>
+                    <section className="mx-auto my-6 grid max-w-[1200px] sm:grid-cols-1 gap-3 px-5 pb-10 lg:grid-cols-3 lg:pt-10">
+                        <div>
+                            <div className="border py-5 shadow-md">
+                                <div className="flex justify-between px-4 pb-5">
+                                    <p className="text-xl font-bold">Delivery</p>
                                 </div>
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <circle cx={6} cy={6} r={3} />
-                                                <circle cx={6} cy={18} r={3} />
-                                                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            The Catalyzer
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                                                <circle cx={12} cy={7} r={4} />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            Neptune
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            Melanchole
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            Bunker
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="xl:w-1/3 md:w-1/2 p-4">
-                                    <div className="border border-gray-300 p-6 rounded-lg">
-                                        <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                                            <svg
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                className="w-6 h-6"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                            </svg>
-                                        </div>
-                                        <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                                            Ramona Falls
-                                        </h2>
-                                        <p className="leading-relaxed text-base">
-                                            Fingerstache flexitarian street art 8-bit waist co, subway tile
-                                            poke farm.
-                                        </p>
-                                    </div>
+                                <div className="flex flex-col px-4">
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                                        </svg>
+                                        maybell@delivery.org
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M3.43 2.524A41.29 41.29 0 0110 2c2.236 0 4.43.18 6.57.524 1.437.231 2.43 1.49 2.43 2.902v5.148c0 1.413-.993 2.67-2.43 2.902a41.202 41.202 0 01-5.183.501.78.78 0 00-.528.224l-3.579 3.58A.75.75 0 016 17.25v-3.443a41.033 41.033 0 01-2.57-.33C1.993 13.244 1 11.986 1 10.573V5.426c0-1.413.993-2.67 2.43-2.902z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
+                                        </svg>
+                                        @maybell
+                                    </a>
                                 </div>
                             </div>
-                            <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                                Button
+                        </div>
+                        <div>
+                            <div className="border py-5 shadow-md">
+                                <div className="flex justify-between px-4 pb-5">
+                                    <p className="text-xl font-bold">Support</p>
+                                </div>
+                                <div className="flex flex-col px-4">
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                                        </svg>
+                                        maybell@delivery.org
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M3.43 2.524A41.29 41.29 0 0110 2c2.236 0 4.43.18 6.57.524 1.437.231 2.43 1.49 2.43 2.902v5.148c0 1.413-.993 2.67-2.43 2.902a41.202 41.202 0 01-5.183.501.78.78 0 00-.528.224l-3.579 3.58A.75.75 0 016 17.25v-3.443a41.033 41.033 0 01-2.57-.33C1.993 13.244 1 11.986 1 10.573V5.426c0-1.413.993-2.67 2.43-2.902z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
+                                        </svg>
+                                        @maybell
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="border py-5 shadow-md">
+                                <div className="flex justify-between px-4 pb-5">
+                                    <p className="text-xl font-bold">Careers</p>
+                                </div>
+                                <div className="flex flex-col px-4">
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                                        </svg>
+                                        maybell@delivery.org
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M3.43 2.524A41.29 41.29 0 0110 2c2.236 0 4.43.18 6.57.524 1.437.231 2.43 1.49 2.43 2.902v5.148c0 1.413-.993 2.67-2.43 2.902a41.202 41.202 0 01-5.183.501.78.78 0 00-.528.224l-3.579 3.58A.75.75 0 016 17.25v-3.443a41.033 41.033 0 01-2.57-.33C1.993 13.244 1 11.986 1 10.573V5.426c0-1.413.993-2.67 2.43-2.902z"
+                                                clipRule="evenodd"
+                                            />
+                                        </svg>
+                                        +8(911)339-88-88
+                                    </a>
+                                    <a className="flex items-center" href="#">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            className="mr-3 h-4 w-4 text-violet-900"
+                                        >
+                                            <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
+                                        </svg>
+                                        @maybell
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="mx-auto my-5 text-center">
+                        <h2 className="text-3xl font-bold">Have another question?</h2>
+                        <p>Complete the form below</p>
+                    </section>
+                    <form className="mx-auto my-5 max-w-[600px] px-5 pb-10" action="">
+                        <div className="mx-auto">
+                            <div className="my-3 flex w-full gap-2">
+                                <input
+                                    className="w-1/2 border px-4 py-2"
+                                    type="text"
+                                    placeholder="E-mail"
+                                />
+                                <input
+                                    className="w-1/2 border px-4 py-2"
+                                    type="text"
+                                    placeholder="Full Name"
+                                />
+                            </div>
+                        </div>
+                        <select className="mb-3 w-full border px-4 py-2" name="pets" id="pet-select">
+                            <option value="">Please choose a category</option>
+                            <option value="delivery">Delivery</option>
+                            <option value="support">Support</option>
+                            <option value="profile">Profile</option>
+                            <option value="careers">Careers</option>
+                            <option value="another">Another category</option>
+                        </select>
+                        <textarea
+                            className="w-full border px-4 py-2"
+                            name=""
+                            id=""
+                            defaultValue={"Write a commentary..."}
+                        />
+                        <div className="lg:items:center container mt-4 flex flex-col justify-between lg:flex-row">
+                            <div className="flex items-center">
+                                <input className="mr-3" type="checkbox" name="" id="" />
+                                <label htmlFor="checkbox">
+                                    I have read and agree with
+                                    <a href="#" className="text-violet-900">
+                                        terms &amp; conditions
+                                    </a>
+                                </label>
+                            </div>
+                            <button className="my-3 bg-amber-400 px-4 py-2 lg:my-0">
+                                Send Message
                             </button>
                         </div>
-                    </section>
-                    <section className="text-gray-700 body-font relative">
-                        <div className="absolute inset-0 bg-gray-300">
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                frameBorder={0}
-                                marginHeight={0}
-                                marginWidth={0}
-                                title="map"
-                                scrolling="no"
-                                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-                                style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
-                            />
-                        </div>
-                        <div className="container px-5 py-24 mx-auto flex">
-                            <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10">
-                                <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
-                                    Feedback
-                                </h2>
-                                <p className="leading-relaxed mb-5 text-gray-600">
-                                    Post-ironic portland shabby chic echo park, banjo fashion axe
-                                </p>
-                                <input
-                                    className="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4"
-                                    placeholder="Email"
-                                    type="email"
-                                />
-                                <textarea
-                                    className="bg-white rounded border border-gray-400 focus:outline-none h-32 focus:border-indigo-500 text-base px-4 py-2 mb-4 resize-none"
-                                    placeholder="Message"
-                                    defaultValue={""}
-                                />
-                                <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                                    Button
-                                </button>
-                                <p className="text-xs text-gray-500 mt-3">
-                                    Chicharrones blog helvetica normcore iceland tousled brook viral
-                                    artisan.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
+                    </form>
+
                 </>
             </Authenticated>
         </>

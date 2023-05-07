@@ -22,7 +22,7 @@ export default (props) => {
                 <Category></Category>
                 <ProductsLineUp title='New arrival' products={page_data.products}></ProductsLineUp>
                 <Ads></Ads>
-                <ProductsLineUp title='Recomended for you'  products={page_data.products}></ProductsLineUp>
+                <ProductsLineUp title='Recomended for you'  products={page_data.recomendedProducts}></ProductsLineUp>
             </Authenticated>
         </>
     )

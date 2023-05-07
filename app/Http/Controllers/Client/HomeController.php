@@ -12,11 +12,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::active()->take(10)->get();
+        $products = Product::active()->orderBy('id','desc')->take(8)->get();
+        $recomendedProducts = Product::active()->take(8)->get();
         $categories = Category::active()->get();
         $banners = Banner::active()->where('type', 'slider')->get()->toArray();
         $page_data = [
             'products' => $products,
+            'recomendedProducts' => $recomendedProducts,
             'categories' => $categories,
             'banners' => $banners,
         ];

@@ -22,15 +22,13 @@ export default function Product(props) {
                     >
                         <i className="fa-solid fa-magnifying-glass" />
                     </Link>
-                    <Link
-                        href="#"
+                    <button
                         onClick={() => handleAddToWishlist(product.id)}
-                        preserveScroll={true}
                         className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                         title="add to wishlist"
                     >
                         <i className="fa-solid fa-heart" />
-                    </Link>
+                    </button>
                 </div>
             </div>
             <div className="pt-4 pb-3 px-4">

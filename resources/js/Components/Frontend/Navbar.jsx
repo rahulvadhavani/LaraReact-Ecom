@@ -1,8 +1,10 @@
 import React from 'react'
 import CategoryList from './CategoryList'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
+import { Dropdown } from 'flowbite-react';
 
 export default function Navbar(props) {
+    const { auth } = usePage().props;
     return (
         <>
             <nav className="bg-sky-700">
@@ -23,9 +25,21 @@ export default function Navbar(props) {
                                 Contact us
                             </Link>
                         </div>
-                        <Link href={route('login')} className={"text-gray-200 hover:text-white transition " + (false ? 'text-gray-200 font-bold' : 'text-gray-200')}>
-                            Login
-                        </Link>
+                        {auth.user
+                            ?
+                            <Link
+                                href={route('logout')}
+                                method="post"
+                                as="button"
+                                title="Log Out"
+                                className='text-xl text-red-700 hover:text-red-800 transition-all'
+                            >
+                                <i class="fa-solid fa-power-off"></i></Link>
+                            :
+                            <Link href={route('login')} className={"text-gray-200 hover:text-white transition " + (false ? 'text-gray-200 font-bold' : 'text-gray-200')}>
+                                Login
+                            </Link>
+                        }
                     </div>
                 </div>
             </nav >
