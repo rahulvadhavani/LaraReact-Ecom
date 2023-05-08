@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { Link } from '@inertiajs/react'
+import logoImg from '../../../../public/assets/images/frontend/logo.svg';
 
 export default function Header(props) {
     return (
@@ -8,7 +9,7 @@ export default function Header(props) {
             <header className="py-4 shadow-sm bg-white">
                 <div className="container flex items-center justify-between">
                     <Link preserveScroll={true} href={route('home')} >
-                        <img src="./assets/images/frontend/logo.svg" alt="Logo" className="w-32" />
+                        <img src={logoImg} alt="Logo" className="w-32" />
                     </Link>
                     <div className="w-full max-w-xl relative flex">
                         <span className="absolute left-4 top-3 text-lg text-gray-400">

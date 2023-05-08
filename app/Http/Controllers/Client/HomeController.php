@@ -42,7 +42,21 @@ class HomeController extends Controller
 
     public function productDetail($id)
     {
-        dd($id);
+        $product = Product::with('category')->where('id',$id)->first();
+        if($product == null){
+            abort(404);
+        }
+        $groupedData = collect($product->attributes)->groupBy('key')->map(function ($val) {
+            return $val->pluck('value');
+        })->toArray();
+        $product->attributes = $groupedData;
+        $relatedProducts = Product::active()->take(10)->get();
+        $page_data = [
+            'product' => $product,
+            'relatedProducts' => $relatedProducts,
+        ];
+        $data = ['module' => 'Product', 'breadcrumbs' => ['Home', 'Product'], 'page_data' => $page_data];
+        return Inertia::render('FrontEnd/ProductDetail', $data);
     }
 
     public function aboutUs()

@@ -34,7 +34,7 @@ export default function Navbar(props) {
                                 title="Log Out"
                                 className='text-xl text-red-700 hover:text-red-800 transition-all'
                             >
-                                <i class="fa-solid fa-power-off"></i></Link>
+                                <i className="fa-solid fa-power-off"></i></Link>
                             :
                             <Link href={route('login')} className={"text-gray-200 hover:text-white transition " + (false ? 'text-gray-200 font-bold' : 'text-gray-200')}>
                                 Login
