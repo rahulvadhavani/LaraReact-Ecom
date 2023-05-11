@@ -189,7 +189,7 @@ export default function Create(props) {
                                         value="Attributes"
                                     />
                                 </div>
-                                <div className='bg-gray-100 dark:bg-gray-600 p-5'>
+                                <div className='bg-gray-100 dark:bg-gray-900 p-5'>
                                     <Attribute getKeyVal={getKeyVal} keyValue={data.attributes}></Attribute>
                                 </div>
                                 <span className="text-red-600">
@@ -205,7 +205,7 @@ export default function Create(props) {
                                         value="Images"
                                     />
                                 </div>
-                                <div className='bg-gray-100 dark:bg-gray-600 p-5'>
+                                <div className='bg-gray-100 dark:bg-gray-900 p-5'>
                                     <UplaodFiles getFiles={getFiles}></UplaodFiles>
                                 </div>
                                 <span className="text-red-600">

@@ -24,7 +24,7 @@ class Editor extends Component {
             ],
         }
         return (
-            <div className="App">
+            <div className="App text-gray-900">
                 <CKEditor
                     config={config}
                     editor={ClassicEditor}

@@ -189,7 +189,7 @@ export default function Edit(props) {
                                         value="Attributes"
                                     />
                                 </div>
-                                <div className='bg-gray-100 dark:bg-gray-600 p-5'>
+                                <div className='bg-gray-100 dark:bg-gray-900 p-5'>
                                     <Attribute getKeyVal={getKeyVal} keyValue={data.attributes}></Attribute>
                                 </div>
                                 <span className="text-red-600">
@@ -205,7 +205,7 @@ export default function Edit(props) {
                                         value="Images"
                                     />
                                 </div>
-                                <div className='bg-gray-100 dark:bg-gray-600 p-5'>
+                                <div className='bg-gray-100 dark:bg-gray-900 p-5'>
                                     <UplaodFiles getFiles={getFiles} images_preview={data.images}></UplaodFiles>
                                 </div>
                                 <span className="text-red-600">
@@ -221,7 +221,7 @@ export default function Edit(props) {
                                         value="description"
                                     />
                                 </div>
-                                <Editor handleEditorChange={handleEditorChange} data={data.description}></Editor>
+                                <Editor  handleEditorChange={handleEditorChange} data={data.description}></Editor>
                                 <span className="text-red-600">
                                     {errors.description}
                                 </span>

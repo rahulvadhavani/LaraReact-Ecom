@@ -50,7 +50,7 @@ class HomeController extends Controller
             return $val->pluck('value');
         })->toArray();
         $product->attributes = $groupedData;
-        $relatedProducts = Product::active()->take(10)->get();
+        $relatedProducts = Product::active()->take(8)->get();
         $page_data = [
             'product' => $product,
             'relatedProducts' => $relatedProducts,
