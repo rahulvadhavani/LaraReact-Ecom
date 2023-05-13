@@ -122,8 +122,8 @@ const Index = ({ auth }) => {
                                         name="search"
                                         value={searchTerm}
                                     />
-                                    <Link href={route('admin.products.index')} preserveScroll={true}>
-                                        <i classnam="hover:text-red-600 ml-6 mt-2 transition-all duration-300 text-2xl fa-solid fa-filter-circle-xmark"></i>
+                                    <Link  href={route('admin.products.index')} preserveScroll={true}>
+                                        <i className="hover:text-red-600 ml-6 mt-2 transition-all duration-300 text-2xl fa-solid fa-filter-circle-xmark"></i>
                                     </Link>
                                 </div>
                                 <LinkButton href={route('admin.products.create')} className="ml-6" preserveScroll={true}>
