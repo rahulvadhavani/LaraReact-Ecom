@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default (props) => {
     const { module, breadcrumbs, page_data } = usePage().props;
-    const { product,relatedProducts } = page_data;
+    const { product, relatedProducts } = page_data;
     console.log(relatedProducts);
     const [thumbnail, setThumbnail] = useState(product.thumbnail);
     const handleImageZoom = (event) => {
@@ -29,19 +29,21 @@ export default (props) => {
                 <>
                     <div className="py-10 container grid grid-cols-2 gap-6">
                         <div>
+                            <div  className="w-full h-[450px]">
                             <img
                                 src={thumbnail}
                                 alt="product"
-                                className="w-full"
+                                className="object-contain h-full w-full"
                             />
-                            <div className="grid grid-cols-5 gap-4 mt-4">
+                            </div>
+                            <div className="grid grid-cols-7 gap-4 mt-4">
                                 {product.images && product.images.map((image, key) => {
                                     return <img
                                         onClick={handleImageZoom}
                                         key={key}
                                         src={image}
                                         alt={product.name}
-                                        className="w-full cursor-pointer border"
+                                        className="w-[70px] cursor-pointer border"
                                     />
                                 })}
                             </div>
@@ -99,7 +101,7 @@ export default (props) => {
                                     <h3 className="text-sm font-medium text-gray-900"></h3>
                                     <div className="mt-4">
                                         {Object.keys(product.attributes).map((item) => {
-                                            return
+                                            return <>
                                                 <div key={item} className="pt-4">
                                                     <h3 className="text-sm text-gray-800 uppercase mb-1">{item}</h3>
                                                     <div className="flex items-center gap-2">
@@ -130,6 +132,7 @@ export default (props) => {
 
                                                     </div>
                                                 </div>
+                                            </>
                                         })}
 
                                     </div>
@@ -243,7 +246,7 @@ export default (props) => {
                         </h2>
                         <div className="grid xsm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {relatedProducts.map((product, key) => {
-                                return<Product key={product.id} product={product} handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} ></Product>
+                                return <Product key={product.id} product={product} handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} ></Product>
                             })}
                         </div>
                     </div>
