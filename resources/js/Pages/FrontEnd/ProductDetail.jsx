@@ -43,7 +43,7 @@ export default (props) => {
                                         key={key}
                                         src={image}
                                         alt={product.name}
-                                        className="w-[70px] cursor-pointer border"
+                                        className="w-[70px] h-[70px] object-contain cursor-pointer border"
                                     />
                                 })}
                             </div>
