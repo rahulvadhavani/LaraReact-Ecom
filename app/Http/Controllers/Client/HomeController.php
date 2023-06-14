@@ -28,13 +28,15 @@ class HomeController extends Controller
 
     public function products()
     {
-        $products = Product::active()->take(10)->get();
+        $products = Product::active()
+        ->when(!empty(request()->category),function($query){
+            $query->where('category_id',request()->category);
+        })
+        ->paginate(10);
         $categories = Category::active()->get();
-        $banners = Banner::active()->where('type', 'slider')->get()->toArray();
         $page_data = [
             'products' => $products,
             'categories' => $categories,
-            'banners' => $banners,
         ];
         $data = ['module' => 'Products', 'breadcrumbs' => ['Home', 'Products'], 'page_data' => $page_data];
         return Inertia::render('FrontEnd/Products', $data);

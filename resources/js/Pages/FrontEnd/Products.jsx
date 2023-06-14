@@ -7,15 +7,16 @@ import Shop from '@/Components/Frontend/Shop'
 
 export default function Products(props) {
     const { module, breadcrumbs, page_data } = usePage().props;
+    const { products,categories } = page_data;
     return (
         <>
             <Authenticated
                 title={module}
                 auth={props.auth}
                 header={<></>}
-                shareData={{ banners: page_data.banners }}
+                shareData={{ products:products,categories}}
             >
-                <Breadcrumb></Breadcrumb>
+                <Breadcrumb data={breadcrumbs}></Breadcrumb>
                 <Head title="Products" />
                 <Shop></Shop>
             </Authenticated>

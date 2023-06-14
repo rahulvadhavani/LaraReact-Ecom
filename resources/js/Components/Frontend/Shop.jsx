@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { usePage } from '@inertiajs/react'
+import { GlobalContext } from '@/Layouts/Authenticated';
+import Product from './Product';
+import Pagination from '../Frontend/Pagination';
 
 export default function Shop() {
+    const { shareData } = useContext(GlobalContext);
+    const handleAddToWishlist = (event, id) => {
+        console.log(id);
+        console.log(event);
+    }
+    const handleAddToCart = (event, id) => {
+        console.log(id);
+        console.log(event);
+    }
+    const [productData, setProductsData] = useState(shareData.products || []);
     return (
         <>
             <div className="container grid md:grid-cols-4 grid-cols-2 gap-6 pt-4 pb-16 items-start">
@@ -67,66 +81,22 @@ export default function Shop() {
                                 Categories
                             </h3>
                             <div className="space-y-2">
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-1"
-                                        id="cat-1"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-1"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Bedroom
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(15)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-2"
-                                        id="cat-2"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-2"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Sofa
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(9)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-3"
-                                        id="cat-3"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-3"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Office
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(21)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-4"
-                                        id="cat-4"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-4"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Outdoor
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(10)</div>
-                                </div>
+                                {shareData.categories.map((category, key) => {
+                                    return <div key={key} className="flex items-center">
+                                        <input
+                                            type="checkbox"
+                                            name={'cat'+category.id}
+                                            id={'cat'+category.id}
+                                            className="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                                        />
+                                        <label
+                                            htmlFor={'cat'+category.id}
+                                            className="text-gray-600 ml-3 cusror-pointer"
+                                        >
+                                            {category.name}
+                                        </label>
+                                    </div>
+                                })}
                             </div>
                         </div>
                         <div className="pt-4">
@@ -353,66 +323,22 @@ export default function Shop() {
                                 Categories
                             </h3>
                             <div className="space-y-2">
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-1"
-                                        id="cat-1"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-1"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Bedroom
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(15)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-2"
-                                        id="cat-2"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-2"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Sofa
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(9)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-3"
-                                        id="cat-3"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-3"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Office
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(21)</div>
-                                </div>
-                                <div className="flex items-center">
-                                    <input
-                                        type="checkbox"
-                                        name="cat-4"
-                                        id="cat-4"
-                                        className="text-primary focus:ring-0 rounded-sm cursor-pointer"
-                                    />
-                                    <label
-                                        htmlFor="cat-4"
-                                        className="text-gray-600 ml-3 cusror-pointer"
-                                    >
-                                        Outdoor
-                                    </label>
-                                    <div className="ml-auto text-gray-600 text-sm">(10)</div>
-                                </div>
+                                {shareData.categories.map((category, key) => {
+                                    return <div key={key} className="flex items-center">
+                                        <input
+                                            type="checkbox"
+                                            name={'cat'+category.id}
+                                            id={'cat'+category.id}
+                                            className="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                                        />
+                                        <label
+                                            htmlFor={'cat'+category.id}
+                                            className="text-gray-600 ml-3 cusror-pointer"
+                                        >
+                                            {category.name}
+                                        </label>
+                                    </div>
+                                })}
                             </div>
                         </div>
                         <div className="pt-4">
@@ -627,396 +553,12 @@ export default function Shop() {
                         </div>
                     </div>
                     <div className="grid md:grid-cols-3 grid-cols-2 gap-6">
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product1.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product2.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product3.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product4.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product5.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
-                        <div className="bg-white shadow rounded overflow-hidden group">
-                            <div className="relative">
-                                <img
-                                    src="./assets/images/frontend/products/product6.jpg"
-                                    alt="product 1"
-                                    className="w-full"
-                                />
-                                <div
-                                    className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                                >
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="view product"
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                        title="add to wishlist"
-                                    >
-                                        <i className="fa-solid fa-heart" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="pt-4 pb-3 px-4">
-                                <a href="#">
-                                    <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                        Guyer Chair
-                                    </h4>
-                                </a>
-                                <div className="flex items-baseline mb-1 space-x-2">
-                                    <p className="text-xl text-primary font-semibold">$45.00</p>
-                                    <p className="text-sm text-gray-400 line-through">$55.90</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="flex gap-1 text-sm text-yellow-400">
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                        <span>
-                                            <i className="fa-solid fa-star" />
-                                        </span>
-                                    </div>
-                                    <div className="text-xs text-gray-500 ml-3">(150)</div>
-                                </div>
-                            </div>
-                            <a
-                                href="#"
-                                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                            >
-                                Add to cart
-                            </a>
-                        </div>
+                        {productData.data.map((product, key) => {
+                            return key < 7 && <Product key={product.id} product={product} handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} ></Product>
+                        })}
+                    </div>
+                    <div className='mt-8'>
+                        <Pagination data={productData} ></Pagination>
                     </div>
                 </div>
             </div>
