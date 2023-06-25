@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Cache;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'status', 'image'];
+    protected $fillable = ['name', 'status', 'image', 'slug'];
 
     const STORAGE_PATH = "/app/public/uplaods/images/category/";
     const UPLOAD_PATH = "public/uplaods/images/category";
@@ -28,6 +28,30 @@ class Category extends Model
     public function getImageAttribute($val)
     {
         return $val == null ? asset('assets/images/dummy.png') : asset("storage/uplaods/images/category/" . $val);
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = $name;
+        $this->attributes['slug'] = self::generateUniqueSlug($name);
+    }
+
+    public static function generateUniqueSlug($title)
+    {
+        $slug = \Str::slug($title, '-');
+        $count = 0;
+
+        while (self::slugExists($slug)) {
+            $count++;
+            $slug = \Str::slug($title, '-') . '-' . $count;
+        }
+
+        return $slug;
+    }
+
+    public static function slugExists($slug)
+    {
+        return static::where('slug', $slug)->exists();
     }
 
     public static function categoriesCount($update = false)

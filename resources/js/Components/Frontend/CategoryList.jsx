@@ -12,7 +12,7 @@ export default function CategoryList() {
                 {(shared_data.categories != undefined || shared_data.categories != null)
                     ?
                     shared_data.categories.map(item => {
-                        return <Link key={item.id} href={route('products', { category: item.id })} className="border-b-2 border-gray-100 border-dotted flex items-center px-6 py-3 hover:bg-gray-100 transition">
+                        return <Link key={item.id} href={route('products', { category: item.slug })} className="border-b-2 border-gray-100 border-dotted flex items-center px-6 py-3 hover:bg-gray-100 transition">
                             <img
                                 src={item.image}
                                 alt="sofa"

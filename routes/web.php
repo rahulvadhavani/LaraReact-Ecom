@@ -37,6 +37,7 @@ Route::get('/admin', function () {
 Route::group([], function () {
     Route::get('/', [ClientHomeController::class, 'index'])->name('home');
     Route::get('/products', [ClientHomeController::class, 'products'])->name('products');
+    Route::get('/products-filter', [ClientHomeController::class, 'productsFilter'])->name('products-filter');
     Route::get('/product/{id}', [ClientHomeController::class, 'productDetail'])->name('product.detail');
     Route::get('/about-us', [ClientHomeController::class, 'aboutUs'])->name('about-us');
     Route::get('/contact-us', [ClientHomeController::class, 'contactUs'])->name('contact-us');

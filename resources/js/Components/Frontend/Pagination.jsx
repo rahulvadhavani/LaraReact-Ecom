@@ -3,6 +3,7 @@ import React from 'react'
 
 export default function Pagination(props) {
     const paginationData = props.data;
+    console.log(paginationData,'sddsdddsddsdsd');
     return (
         <>
             {paginationData.data.length > 0 && (

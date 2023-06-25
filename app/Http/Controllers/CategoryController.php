@@ -99,6 +99,8 @@ class CategoryController extends Controller
                 unlink($file_path);
             }
             $data['image'] = basename($imagePath);
+        }else{
+            unset($data['image']);
         }
         $category->update($data);
         return redirect()->route('admin.categories.index')
