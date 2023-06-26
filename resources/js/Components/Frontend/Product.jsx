@@ -32,9 +32,9 @@ export default function Product(props) {
                 </div>
             </div>
             <div className="pt-4 pb-3 px-4">
-                <Link href={route('product.detail', { id: product.id })}>
-                    <Tooltip content={product.name}>
-                        <h4 className="truncate uppercase font-medium text-xl mb-2 text-gray-600 hover:text-gray-900 transition">
+                <Link className='truncate break-all' href={route('product.detail', { id: product.id })}>
+                    <Tooltip  content={product.name}>
+                        <h4 className="w-72 truncate uppercase font-medium text-xl mb-2 text-gray-600 hover:text-gray-900 transition">
                             {product.name}
                         </h4>
                     </Tooltip>

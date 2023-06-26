@@ -44,7 +44,7 @@ class HandleInertiaRequests extends Middleware
                 ]);
             },
         ];
-        if ($request->routeIs('home', 'products', 'about-us', 'contact-us', 'account', 'wishlist')) {
+        if ($request->routeIs('home', 'products','products', 'about-us', 'contact-us', 'account', 'wishlist','product.detail')) {
             $categories = Category::active()->get();
             $sharedData['shared_data'] = ['categories' => $categories];
         }

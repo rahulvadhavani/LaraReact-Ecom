@@ -15,7 +15,7 @@ export default function Navbar(props) {
                             <Link href={route('home')} className={"text-gray-200 hover:text-white transition " + (route().current('home') ? 'text-gray-200 font-bold' : 'text-gray-200')}>
                                 Home
                             </Link>
-                            <Link href={route('products')} className={"text-gray-200 hover:text-white transition " + (route().current('products') ? 'text-gray-200 font-bold' : 'text-gray-200')}>
+                            <Link href={route('products')} className={"text-gray-200 hover:text-white transition " + (route().current('products') || route().current('product.detail') ? 'text-gray-200 font-bold' : 'text-gray-200')}>
                                 Shop
                             </Link>
                             <Link href={route('about-us')} className={"text-gray-200 hover:text-white transition " + (route().current('about-us') ? 'text-gray-200 font-bold' : 'text-gray-200')}>

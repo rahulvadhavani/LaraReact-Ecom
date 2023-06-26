@@ -189,7 +189,7 @@ export default (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="container pb-16">
+                    {/* <div className="container pb-16">
                         <h3 className="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">
                             Product details
                         </h3>
@@ -239,7 +239,7 @@ export default (props) => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="container pb-16">
                         <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">
                             Related products

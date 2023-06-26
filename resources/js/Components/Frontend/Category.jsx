@@ -20,7 +20,7 @@ export default function Category() {
                                 className="w-full"
                             />
                             <Link
-                                href={route('products', { category: category.id })}
+                                href={route('products', { category: category.slug })}
                                 className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition"
                             >
                                 {category.name}

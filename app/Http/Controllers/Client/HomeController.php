@@ -66,11 +66,10 @@ class HomeController extends Controller
     public function products()
     {
         $categories = Category::active()->get();
-        $filterData = request()->only('page', 'category');
+        $filterData = request()->only('page', 'category', 'min_price', 'max_price', 'sort');
         if (isset($filterData['category'])) {
-            $filterData['category'] = explode(',', $filterData['category']);
+            $filterData['category'] = is_array($filterData['category']) ? explode(',', $filterData['category']) : [$filterData['category']];
         }
-
         $page_data = [
             'categories' => $categories,
             'filterData' => $filterData

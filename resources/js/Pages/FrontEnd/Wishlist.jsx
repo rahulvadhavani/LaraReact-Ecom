@@ -15,7 +15,7 @@ export default function Wishlist() {
                     <PageHead breadcrumbs={[]} module='Products' ></PageHead>
                 }
             >
-                <Breadcrumb></Breadcrumb>
+                {/* <Breadcrumb></Breadcrumb> */}
                 <Head title="Products" />
                 <div className="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">
                     {/* sidebar */}
